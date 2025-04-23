@@ -1,0 +1,159 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0e0e0e;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+/* HEADER */
+.custom-header {
+  background: linear-gradient(to right, #1a1a1a, #292929);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(255, 136, 0, 0.5);
+  border-bottom: 2px solid #ff9800;
+}
+
+.custom-header h1 {
+  font-size: 2.2rem;
+  color: #ffbb00;
+  text-shadow: 0 0 8px #ffaa00;
+  letter-spacing: 2px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  background-color: #ff9800;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.news-ticker {
+  background: linear-gradient(to right, #ff4500, #ff6f00);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-bottom: 2px solid #000;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* MAIN SECTION */
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 2rem;
+  color: #ffbb00;
+  text-shadow: 0 0 8px #ffaa00;
+}
+
+.tips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tip-card {
+  background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+  border: 2px solid #ff9800;
+  border-radius: 12px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  color: #fff;
+}
+
+.tip-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 60%);
+  transform: rotate(45deg);
+  pointer-events: none;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.tip-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff6f00;
+}
+
+.tip-card:hover::before {
+  opacity: 1;
+}
+
+/* FOOTER */
+.custom-footer {
+  background: #111111;
+  color: #ccc;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 40px;
+  border-top: 2px solid #ff6f00;
+  box-shadow: 0 -4px 15px rgba(255, 110, 0, 0.3);
+}
+
+.footer-socials {
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  color: #ffae42;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffae42;
+}
